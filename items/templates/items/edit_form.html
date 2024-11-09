@@ -1,0 +1,50 @@
+    {% extends "items/base.html" %}
+
+    {% block title %}
+    <title>edit form</title>
+    {% endblock %}
+
+    <!-- Bootstrap CSS -->
+   {% block content %}
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-3">Grocery : Inventory</h2>
+
+        <!-- Basic Form -->
+        <form action="{% url 'edit' mx.id %}" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" placeholder="enter items" value="{{mx.name}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Wholesale Price</label>
+                <input type="text" name="wholesale_price" class="form-control" placeholder="enter w/sale price" value={{mx.wholesale_price}}>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Retail Price</label>
+                <input type="text" name="retail_price" class="form-control"  placeholder="enter retail price" value={{mx.retail_price}}>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Country</label>
+                <input type="text" name="country" class="form-control" placeholder="enter country" value={{mx.country}}>
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label">Company</label>
+                <input type="text" name="company" class="form-control" placeholder="enter company" value={{mx.company}}>
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label">Entry Date</label>
+                <input type="date" name="entry_date" class="form-control" placeholder="enter date" value={{mx.entry_date}}>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+</body>
+    {% endblock %}

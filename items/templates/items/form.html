@@ -1,0 +1,50 @@
+    {% extends "items/base.html" %}
+
+    {% block title %}
+    <title>Bootstrap Form Example</title>
+    {% endblock %}
+
+    <!-- Bootstrap CSS -->
+   {% block content %}
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-3">Grocery : Inventory</h2>
+
+        <!-- Basic Form -->
+        <form action="/form" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" placeholder="enter items">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Wholesale Price</label>
+                <input type="text" name="wholesale_price" class="form-control" placeholder="enter w/sale price">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Retail Price</label>
+                <input type="text" name="retail_price" class="form-control"  placeholder="enter retail price">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Country</label>
+                <input type="text" name="country" class="form-control" placeholder="enter country">
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label">Company</label>
+                <input type="text" name="company" class="form-control" placeholder="enter company">
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label">Entry Date</label>
+                <input type="date" name="entry_date" class="form-control" placeholder="enter date">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+
+</body>
+    {% endblock %}
